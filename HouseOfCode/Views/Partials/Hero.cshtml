@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>@Model.Value("overskrift")</h1>
+            <p>@Model.Value("underskrift")</p>
+
+            @{
+                var backgroundImg = Model.Value<IPublishedContent>("baggrundsbillede");
+                if (backgroundImg != null){
+                    <img src="@backgroundImg.Url" alt="@backgroundImg.Value("alt")" />
+                }
+            }
+        </div>
+    </div>
+</div>
+

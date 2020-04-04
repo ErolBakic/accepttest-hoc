@@ -17,7 +17,19 @@
     }
 </head>
 <body>
-    @RenderBody()
+    <div>
+
+        <div>
+            <a href="/">Logo her</a>
+            @{ Html.RenderPartial("headerMenu"); }
+        </div>
+
+        <div class="Hero">
+            @{ Html.RenderPartial("Hero"); }
+        </div>
+
+        @RenderBody()
+    </div>
 </body>
 </html>
 
