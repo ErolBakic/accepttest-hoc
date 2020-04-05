@@ -21,6 +21,18 @@ $headerSizeSD: 32px;
 $headerSizeMD: 38px;
 $headerSizeLD: 50px;
 
+$parafSize: 18px;
+
+$headerMargXS: 30px;
+$headerMargSD: 45px;
+$headerMargMD: 52px;
+$headerMargLD: 60px;
+
+$btnPaddingXS: 15px 50px;
+$btnPaddingSD: 15px 75px;
+$btnPaddingMD: 20px 100px;
+$btnPaddingLD: 20px 100px;
+
 
 body{
   margin-top: $headerHeight;
@@ -88,7 +100,7 @@ body{
         }
       }
       &__link{
-        color: $textCol;
+        color: $headCol;
         border-bottom: 1px solid $gray;
         text-decoration: none;
         padding-bottom: 5px;
@@ -138,6 +150,9 @@ body{
       font-size: $headerSizeXS;
       font-weight: 800;
     }
+    &__text{
+      font-size: $parafSize;
+    }
   }
   &__img{
     position: absolute;
@@ -154,6 +169,70 @@ body{
   }
 }
 
+// ------- Main -------
+.content{
+  .main{
+    padding-top: 80px;
+    padding-bottom: 80px;
+    &__title{
+      font-size: $headerSizeXS;
+      font-family: $headerFont;
+      font-weight: 800;
+      color: $headCol;
+      margin-bottom: $headerMargXS;
+    }
+    &__content{
+      line-height: 30px;
+      font-size: $parafSize;
+      color: $headCol;
+      > * {
+        margin-bottom: 40px;
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+    .btn{
+      display: block;
+      text-align: center;
+      margin-top: 80px;
+      pointer-events: none;
+      &:focus{
+        outline: none;
+        box-shadow: none;
+      }
+      &__text{
+        color: $white;
+        background-color: $textCol;
+        padding: $btnPaddingXS;
+        border-radius: 26px;
+        font-size: $parafSize;
+        font-weight: normal;
+        pointer-events: initial;
+        &:hover{
+          text-decoration: none;
+          background-color: lighten($textCol, 10);
+        }
+      }
+      &--loogame{
+        .btn__text{
+          background-color: $loogame;
+          &:hover{
+            background-color: lighten($loogame, 10);
+          }
+        }
+      }
+      &--success{
+        .btn__text{
+          background-color: $success;
+          &:hover{
+            background-color: lighten($success, 10);
+          }
+        }
+      }
+    }
+  }
+}
 
 // Small devices (landscape phones, 576px and up)
 @media(min-width: 576px){
@@ -161,6 +240,19 @@ body{
     .hero-content{
       &__title{
         font-size: $headerSizeSD;
+      }
+    }
+  }
+  .content{
+    .main{
+      &__title{
+        font-size: $headerSizeSD;
+        margin-bottom: $headerMargSD
+      }
+      .btn{
+        &__text{
+          padding: $btnPaddingSD;
+        }
       }
     }
   }
@@ -172,6 +264,21 @@ body{
     .hero-content{
       &__title{
         font-size: $headerSizeMD;
+      }
+    }
+  }
+  .content{
+    .main{
+      &__title{
+        font-size: $headerSizeMD;
+        margin-bottom: $headerMargMD
+      }
+      .btn{
+        &__text{
+          padding: $btnPaddingMD;
+          font-size: 20px;
+          font-weight: bold;
+        }
       }
     }
   }
@@ -235,6 +342,19 @@ body{
     .hero-content{
       &__title{
         font-size: $headerSizeLD;
+      }
+    }
+  }
+  .content{
+    .main{
+      &__title{
+        font-size: $headerSizeLD;
+        margin-bottom: $headerMargLD
+      }
+      .btn{
+        &__text{
+          padding: $btnPaddingLD;
+        }
       }
     }
   }

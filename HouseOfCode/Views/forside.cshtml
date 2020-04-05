@@ -3,43 +3,48 @@
     Layout = "master.cshtml";
 }
 
-    <div class="container">
-        <div class="row">
-            <main class="col-lg-8 offset-lg-2 col-12 main">
-                <h2 class="main__title">@Model.Value("mainOverskrift")</h2>
-                <div class="main__content">
-                    @Model.Value("mainIndhold")
-                </div>
-            </main>
-        </div>
+<div class="container">
+    <div class="row">
+        <main class="col-lg-8 offset-lg-2 col-12 main">
+            <h2 class="main__title">@Model.Value("mainOverskrift")</h2>
+            <div class="main__content">
+                @Model.Value("mainIndhold")
+            </div>
+        </main>
     </div>
+</div>
 <!-- Intro -->
-
-
-
 <!-- Packages her -->
-
-
 <!-- Medlemsskab -->
 @{
     if (Model.Value("ctaOverskrift") != String.Empty && @Model.Value("ctaIndhold") != String.Empty)
     { @:
 
 
-        @Model.Value("ctaOverskrift")
-        @Model.Value("ctaIndhold")
+        <div class="container">
+            <div class="row">
+                <main class="col-lg-8 offset-lg-2 col-12 main">
+                    <h2 class="main__title">@Model.Value("ctaOverskrift")</h2>
+                    <div class="main__content">
+                        @Model.Value("ctaIndhold")
 
-        <a href="/log-ind">
-            @{
-                if (Model.Value("ctaButton") != String.Empty)
-                {
-                    @Model.Value("ctaButton");
-                }
-                else
-                {
-                    @: Klik mig
-                }
-            }
-        </a>
+                        <a href="/log-ind" class="btn btn--loogame">
+                            <span class="btn__text">
+                                @{
+                                    if (Model.Value("ctaButton") != String.Empty)
+                                    {
+                                        @Model.Value("ctaButton");
+                                    }
+                                    else
+                                    {
+                                        @: Klik mig
+                                    }
+                                }
+                            </span>
+                        </a>
+                    </div>
+                </main>
+            </div>
+        </div>
     }
 }
