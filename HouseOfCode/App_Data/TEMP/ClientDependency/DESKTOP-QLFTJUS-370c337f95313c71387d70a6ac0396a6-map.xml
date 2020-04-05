@@ -62,4 +62,14 @@
       <file name="/umbraco/lib/tinymce/plugins/noneditable/plugin.min.js" />
     </files>
   </item>
+  <item key="L2Nzcy9zdHlsZS5taW4uY3NzOw" file="C:\Users\ErolB\Desktop\Erol\Git Repositories\accepttest-hoc\HouseOfCode\App_Data\TEMP\ClientDependency\1_af1105d5de874700a0c96a30028f8def.cdC" compression="gzip" version="1">
+    <files>
+      <file name="/css/style.min.css" />
+    </files>
+  </item>
+  <item key="L3NjcmlwdHMvbWFpbi5taW4uanM7" file="C:\Users\ErolB\Desktop\Erol\Git Repositories\accepttest-hoc\HouseOfCode\App_Data\TEMP\ClientDependency\1_d1641baf8ed44bfebd19c65965041443.cdJ" compression="gzip" version="1">
+    <files>
+      <file name="/scripts/main.min.js" />
+    </files>
+  </item>
 </map>

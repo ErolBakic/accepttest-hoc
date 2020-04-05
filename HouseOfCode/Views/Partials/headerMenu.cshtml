@@ -3,32 +3,54 @@
 
 @{ var selection = Model.Root().Children.Where(x => x.IsVisible()).ToArray(); }
 
-    <a href="/">
-        @{
-            // Get logo
-            var logo = Model.Root().Siblings().FirstOrDefault(x => x.ContentType.Alias == "headerFooter");
-            var lSrc = logo.Value<IPublishedContent>("mainLogo");
+<div class="container">
+    <div class="row">
+        <div class="col-3 col-lg-2 header__logo">
+            <a class="logo" href="/">
+                @{
+                    // Get logo
+                    var logo = Model.Root().Siblings().FirstOrDefault(x => x.ContentType.Alias == "headerFooter");
+                    var lSrc = logo.Value<IPublishedContent>("mainLogo");
 
-            if (lSrc != null)
-            {
-                @: <img src="@lSrc.Url" alt="@lSrc.Value("alt")" />
-            } else {
-                @: <span>Erol Bakic</span>
+                    if (lSrc != null) {
+                        @: <img class="logo__target" src="@lSrc.Url" alt="@lSrc.Value("alt")" />
+                    } else {
+                        @: <span class="logo__target">Erol Bakic</span>
+                    }
+                }
+            </a>
+        </div>
+
+        <div class="col-9 offset-lg-4 col-lg-6 header__menu">
+
+            <a id="toggle-nav">
+                <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" >
+                    <path fill="currentColor" d="M442 114H6a6 6 0 0 1-6-6V84a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6z" class=""></path>
+                </svg>
+            </a>
+
+            @if (selection.Length > 0){
+            <ul id="top-menu" class="menu">
+
+                <li class="menu__list">
+                    <a class="menu__link" href="#">Menu 1</a>
+                </li>
+
+                <li class="menu__list">
+                    <a class="menu__link" href="#">Menu 2</a>
+                </li>
+
+                <li class="menu__list">
+                    <a class="menu__link" href="#">Menu 3</a>
+                </li>
+
+                @foreach (var item in selection){
+                    <li class="menu__list @(item.IsAncestorOrSelf(Model) ? "menu--active" : null)">
+                        <a class="menu__link" href="@item.Url">@item.Name</a>
+                    </li>
+                }
+            </ul>
             }
-        }
-    </a>
-
-@if (selection.Length > 0) {
-<ul>
-    <li><a href="#">Menu 1</a></li>
-    <li><a href="#">Menu 2</a></li>
-    <li><a href="#">Menu 3</a></li>
-
-    @foreach (var item in selection)
-    {
-        <li class="@(item.IsAncestorOrSelf(Model) ? "current" : null)">
-            <a href="@item.Url">@item.Name</a>
-        </li>
-    }
-</ul>
-}
+        </div>
+    </div>
+</div>
