@@ -1,0 +1,9 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+
+@{ 
+    var footer = Model.Root().Siblings().FirstOrDefault(x => x.ContentType.Alias == "headerFooter");
+}
+
+@footer.Value("footerCvr")
+@footer.Value("footerEmail")
+@footer.Value("footerPhone")

@@ -17,16 +17,25 @@
 </head>
 <body>
     <div>
-
+        <!-- Header -->
         <div>
             @{ Html.RenderPartial("headerMenu"); }
         </div>
 
+        <!-- Hero -->
         <div class="Hero">
             @{ Html.RenderPartial("Hero"); }
         </div>
 
-        @RenderBody()
+        <!-- Content -->
+        <div>
+            @RenderBody()
+        </div>
+
+        <!-- Footer -->
+        <div>
+            @{ Html.RenderPartial("Footer"); }
+        </div>
     </div>
 </body>
 </html>
