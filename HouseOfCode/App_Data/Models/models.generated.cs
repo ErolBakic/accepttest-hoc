@@ -17,8 +17,8 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.ModelsBuilder.Embedded;
 
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9435fdf638934c95")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.10")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "463fd95106e55519")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 namespace Umbraco.Web.PublishedModels
 {
@@ -46,6 +46,27 @@ namespace Umbraco.Web.PublishedModels
 		{ }
 
 		// properties
+
+		///<summary>
+		/// Knap Tekst
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("ctaButton")]
+		public string CtaButton => this.Value<string>("ctaButton");
+
+		///<summary>
+		/// Indhold
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("ctaIndhold")]
+		public global::System.Web.IHtmlString CtaIndhold => this.Value<global::System.Web.IHtmlString>("ctaIndhold");
+
+		///<summary>
+		/// Overskrift: Efterlad overskriften og indholdet tom for at skjule CTA sektion
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("ctaOverskrift")]
+		public string CtaOverskrift => this.Value<string>("ctaOverskrift");
 
 		///<summary>
 		/// Indhold

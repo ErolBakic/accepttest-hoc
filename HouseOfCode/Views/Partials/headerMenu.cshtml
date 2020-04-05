@@ -19,15 +19,16 @@
     </a>
 
 @if (selection.Length > 0) {
-    <ul>
-        <li><a href="#">Menu 1</a></li>
-        <li><a href="#">Menu 2</a></li>
+<ul>
+    <li><a href="#">Menu 1</a></li>
+    <li><a href="#">Menu 2</a></li>
+    <li><a href="#">Menu 3</a></li>
 
-        @foreach (var item in selection)
-        {
-            <li class="@(item.IsAncestorOrSelf(Model) ? "current" : null)">
-                <a href="@item.Url">@item.Name</a>
-            </li>
-        }
-    </ul>
+    @foreach (var item in selection)
+    {
+        <li class="@(item.IsAncestorOrSelf(Model) ? "current" : null)">
+            <a href="@item.Url">@item.Name</a>
+        </li>
+    }
+</ul>
 }

@@ -1,8 +1,33 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
-	Layout = "master.cshtml";
+    Layout = "master.cshtml";
 }
 
+<!-- Intro -->
 @Model.Value("mainOverskrift")
 @Model.Value("mainIndhold")
 
+<!-- Packages her -->
+<!-- Medlemsskab -->
+@{
+    if (Model.Value("ctaOverskrift") != String.Empty && @Model.Value("ctaIndhold") != String.Empty)
+    { @:
+
+
+        @Model.Value("ctaOverskrift")
+        @Model.Value("ctaIndhold")
+
+        <a href="/log-ind">
+            @{
+                if (Model.Value("ctaButton") != String.Empty)
+                {
+                    @Model.Value("ctaButton");
+                }
+                else
+                {
+                    @: Klik mig
+                }
+            }
+        </a>
+    }
+}
