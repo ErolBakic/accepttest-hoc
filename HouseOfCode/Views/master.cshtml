@@ -3,6 +3,8 @@
 @using ClientDependency.Core
 @{
     Layout = null;
+
+    var heroType = Model.Name == "Forside" ? "hero--main" : "hero--sub";
 }
 
 <!DOCTYPE html>
@@ -29,7 +31,7 @@
         </div>
 
         <!-- Hero -->
-        <div class="Hero">
+        <div class="hero @heroType">
             @{ Html.RenderPartial("Hero"); }
         </div>
 

@@ -2,17 +2,24 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-xs-12">
-            <h1>@Model.Value("overskrift")</h1>
-            <p>@Model.Value("underskrift")</p>
+        <section class="col-xs-12 hero-content">
+
+            <h1 class="hero-content__title">@Model.Value("overskrift")</h1>
+
+            @{ 
+                if(Model.Value("underskrift") != String.Empty){
+                    @: <p class="hero-content__text">@Model.Value("underskrift")</p>
+                }
+            }
+            
 
             @{
                 var backgroundImg = Model.Value<IPublishedContent>("baggrundsbillede");
                 if (backgroundImg != null){
-                    <img src="@backgroundImg.Url" alt="@backgroundImg.Value("alt")" />
+                    <img class="hero__img" src="@backgroundImg.Url" alt="@backgroundImg.Value("alt")" />
                 }
             }
-        </div>
+        </section>
     </div>
 </div>
 

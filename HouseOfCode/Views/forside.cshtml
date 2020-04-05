@@ -3,11 +3,23 @@
     Layout = "master.cshtml";
 }
 
+    <div class="container">
+        <div class="row">
+            <main class="col-lg-8 offset-lg-2 col-12 main">
+                <h2 class="main__title">@Model.Value("mainOverskrift")</h2>
+                <div class="main__content">
+                    @Model.Value("mainIndhold")
+                </div>
+            </main>
+        </div>
+    </div>
 <!-- Intro -->
-@Model.Value("mainOverskrift")
-@Model.Value("mainIndhold")
+
+
 
 <!-- Packages her -->
+
+
 <!-- Medlemsskab -->
 @{
     if (Model.Value("ctaOverskrift") != String.Empty && @Model.Value("ctaIndhold") != String.Empty)
