@@ -1,7 +1,8 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<Forside>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @{
 	Layout = "master.cshtml";
 }
 
-
+@Model.Value("mainOverskrift")
+@Model.Value("mainIndhold")
 

@@ -6,8 +6,8 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "b17b31ea4794d05f")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.9")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "9435fdf638934c95")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.10")]
 
 
 // FILE: models.generated.cs
@@ -60,6 +60,20 @@ namespace Umbraco.Web.PublishedModels
 		{ }
 
 		// properties
+
+		///<summary>
+		/// Indhold
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("mainIndhold")]
+		public global::System.Web.IHtmlString MainIndhold => this.Value<global::System.Web.IHtmlString>("mainIndhold");
+
+		///<summary>
+		/// Overskrift
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("mainOverskrift")]
+		public string MainOverskrift => this.Value<string>("mainOverskrift");
 
 		///<summary>
 		/// Baggrundsbillede
@@ -354,6 +368,60 @@ namespace Umbraco.Web.PublishedModels
 		/// <summary>Static getter for Underskrift</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		public static string GetUnderskrift(IBasicContent that) => that.Value<string>("underskrift");
+	}
+
+	/// <summary>Header & Footer</summary>
+	[PublishedModel("headerFooter")]
+	public partial class HeaderFooter : PublishedContentModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const string ModelTypeAlias = "headerFooter";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<HeaderFooter, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public HeaderFooter(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// CVR
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("footerCvr")]
+		public int FooterCvr => this.Value<int>("footerCvr");
+
+		///<summary>
+		/// Email
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("footerEmail")]
+		public string FooterEmail => this.Value<string>("footerEmail");
+
+		///<summary>
+		/// Telefon Nummer
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("footerPhone")]
+		public int FooterPhone => this.Value<int>("footerPhone");
+
+		///<summary>
+		/// Logo
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("mainLogo")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent MainLogo => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("mainLogo");
 	}
 
 	/// <summary>Folder</summary>

@@ -312,6 +312,12 @@
     <Content Include="Views\Partials\Grid\Editors\Base.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
+    <Content Include="Views\forside.cshtml" />
+    <Content Include="Views\logInd.cshtml" />
+    <Content Include="Views\master.cshtml" />
+    <Content Include="Views\Partials\Hero.cshtml" />
+    <Content Include="Views\opretBruger.cshtml" />
+    <Content Include="Views\Partials\headerMenu.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
