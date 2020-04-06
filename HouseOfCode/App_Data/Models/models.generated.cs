@@ -17,8 +17,8 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.ModelsBuilder.Embedded;
 
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "463fd95106e55519")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "7748d24cc4c5b848")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.6")]
 
 namespace Umbraco.Web.PublishedModels
 {
@@ -81,6 +81,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("mainOverskrift")]
 		public string MainOverskrift => this.Value<string>("mainOverskrift");
+
+		///<summary>
+		/// Pakke Løsninger
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("pakkeLosninger")]
+		public global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.Pakker> PakkeLosninger => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Web.PublishedModels.Pakker>>("pakkeLosninger");
 
 		///<summary>
 		/// Baggrundsbillede
@@ -429,6 +436,121 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("mainLogo")]
 		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent MainLogo => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("mainLogo");
+	}
+
+	/// <summary>Side</summary>
+	[PublishedModel("side")]
+	public partial class Side : PublishedContentModel, IBasicContent, ISEO
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const string ModelTypeAlias = "side";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Side, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public Side(IPublishedContent content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Baggrundsbillede
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("baggrundsbillede")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent Baggrundsbillede => global::Umbraco.Web.PublishedModels.BasicContent.GetBaggrundsbillede(this);
+
+		///<summary>
+		/// Overskrift
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("overskrift")]
+		public string Overskrift => global::Umbraco.Web.PublishedModels.BasicContent.GetOverskrift(this);
+
+		///<summary>
+		/// Underskrift
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("underskrift")]
+		public string Underskrift => global::Umbraco.Web.PublishedModels.BasicContent.GetUnderskrift(this);
+
+		///<summary>
+		/// Side Beskrivelse
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("seoBeskrivelse")]
+		public string SeoBeskrivelse => global::Umbraco.Web.PublishedModels.SEO.GetSeoBeskrivelse(this);
+
+		///<summary>
+		/// Overskrift
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("seoOverskrift")]
+		public string SeoOverskrift => global::Umbraco.Web.PublishedModels.SEO.GetSeoOverskrift(this);
+	}
+
+	/// <summary>Pakker</summary>
+	[PublishedModel("pakker")]
+	public partial class Pakker : PublishedElementModel
+	{
+		// helpers
+#pragma warning disable 0109 // new is redundant
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const string ModelTypeAlias = "pakker";
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new const PublishedItemType ModelItemType = PublishedItemType.Content;
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public new static IPublishedContentType GetModelContentType()
+			=> PublishedModelUtility.GetModelContentType(ModelItemType, ModelTypeAlias);
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		public static IPublishedPropertyType GetModelPropertyType<TValue>(Expression<Func<Pakker, TValue>> selector)
+			=> PublishedModelUtility.GetModelPropertyType(GetModelContentType(), selector);
+#pragma warning restore 0109
+
+		// ctor
+		public Pakker(IPublishedElement content)
+			: base(content)
+		{ }
+
+		// properties
+
+		///<summary>
+		/// Ikon
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("packIkon")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent PackIkon => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("packIkon");
+
+		///<summary>
+		/// Pris
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("packPrice")]
+		public int PackPrice => this.Value<int>("packPrice");
+
+		///<summary>
+		/// Titel
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("packTitel")]
+		public string PackTitel => this.Value<string>("packTitel");
+
+		///<summary>
+		/// Løsninger
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("packUSP")]
+		public global::System.Collections.Generic.IEnumerable<string> PackUsp => this.Value<global::System.Collections.Generic.IEnumerable<string>>("packUSP");
 	}
 
 	/// <summary>Folder</summary>

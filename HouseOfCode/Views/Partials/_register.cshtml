@@ -52,57 +52,57 @@ else
 {
     using (Html.BeginUmbracoForm<UmbRegisterController>("HandleRegisterMember"))
     {
-        <fieldset>
-            <h2 class="main__title">Opret Bruger</h2>
+<fieldset>
+    <h2 class="main__title">Brugeroprettelse</h2>
 
-            @Html.ValidationSummary("registerModel", true)
+    @Html.ValidationSummary("registerModel", true)
 
-            <div class="form-group">
-                @Html.LabelFor(m => registerModel.Name, "Navn")
-                @Html.TextBoxFor(m => registerModel.Name, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => registerModel.Name, "", new { @class = "invalid-feedback" })
-            </div>
+    <div class="form-group">
+        @Html.LabelFor(m => registerModel.Name, "Navn")
+        @Html.TextBoxFor(m => registerModel.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => registerModel.Name, "", new { @class = "invalid-feedback" })
+    </div>
 
-            <div class="form-group">
-                @Html.LabelFor(m => registerModel.Email, "E-mail")
-                @Html.TextBoxFor(m => registerModel.Email, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => registerModel.Email, "", new { @class = "invalid-feedback" })
-            </div>
+    <div class="form-group">
+        @Html.LabelFor(m => registerModel.Email, "E-mail")
+        @Html.TextBoxFor(m => registerModel.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => registerModel.Email, "", new { @class = "invalid-feedback" })
+    </div>
 
-            <div class="form-group">
-                @Html.LabelFor(m => registerModel.Password, "Kodeord")
-                @Html.PasswordFor(m => registerModel.Password, new { @class = "form-control" })
-                @Html.ValidationMessageFor(m => registerModel.Password, "", new { @class = "invalid-feedback" })
-            </div>
+    <div class="form-group">
+        @Html.LabelFor(m => registerModel.Password, "Kodeord")
+        @Html.PasswordFor(m => registerModel.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => registerModel.Password, "", new { @class = "invalid-feedback" })
+    </div>
 
-            @if (registerModel.MemberProperties != null)
-            {
-                @*
-                    It will only displays properties marked as "Member can edit" on the "Info" tab of the Member Type.
-                *@
-                for (var i = 0; i < registerModel.MemberProperties.Count; i++)
-                {
-                    @Html.LabelFor(m => registerModel.MemberProperties[i].Value, registerModel.MemberProperties[i].Name)
-                    @*
-                        By default this will render a textbox but if you want to change the editor template for this property you can
-                        easily change it. For example, if you wanted to render a custom editor for this field called "MyEditor" you would
-                        create a file at ~/Views/Shared/EditorTemplates/MyEditor.cshtml", then you will change the next line of code to
-                        render your specific editor template like:
-                        @Html.EditorFor(m => registerModel.MemberProperties[i].Value, "MyEditor")
-                    *@
-                    @Html.EditorFor(m => registerModel.MemberProperties[i].Value)
-                    @Html.HiddenFor(m => registerModel.MemberProperties[i].Alias)
-                    <br />
-                }
-            }
+    @if (registerModel.MemberProperties != null)
+    {
+        @*
+            It will only displays properties marked as "Member can edit" on the "Info" tab of the Member Type.
+        *@
+        for (var i = 0; i < registerModel.MemberProperties.Count; i++)
+        {
+            @Html.LabelFor(m => registerModel.MemberProperties[i].Value, registerModel.MemberProperties[i].Name)
+            @*
+                By default this will render a textbox but if you want to change the editor template for this property you can
+                easily change it. For example, if you wanted to render a custom editor for this field called "MyEditor" you would
+                create a file at ~/Views/Shared/EditorTemplates/MyEditor.cshtml", then you will change the next line of code to
+                render your specific editor template like:
+                @Html.EditorFor(m => registerModel.MemberProperties[i].Value, "MyEditor")
+            *@
+            @Html.EditorFor(m => registerModel.MemberProperties[i].Value)
+            @Html.HiddenFor(m => registerModel.MemberProperties[i].Alias)
+            <br />
+        }
+    }
 
-            @Html.HiddenFor(m => registerModel.MemberTypeAlias)
-            @Html.HiddenFor(m => registerModel.RedirectUrl)
-            @Html.HiddenFor(m => registerModel.UsernameIsEmail)
+    @Html.HiddenFor(m => registerModel.MemberTypeAlias)
+    @Html.HiddenFor(m => registerModel.RedirectUrl)
+    @Html.HiddenFor(m => registerModel.UsernameIsEmail)
 
-            <button class="btn btn--loogame">
-                <span class="btn__text">Opret bruger</span>
-            </button>
-        </fieldset>
+    <button class="btn btn--loogame">
+        <span class="btn__text">Opret bruger</span>
+    </button>
+</fieldset>
     }
 }

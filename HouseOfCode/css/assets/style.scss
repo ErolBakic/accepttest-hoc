@@ -8,6 +8,8 @@ $success: #609F69;
 $loogame: #60669F;
 $heroFilter: #303030;
 
+$black: #2A2526;
+
 $textCol: #707070;
 $headCol: #464646;
 
@@ -21,7 +23,7 @@ $headerFont: 'Montserrat', sans-serif;
 $headerSizeXS: 24px;
 $headerSizeSD: 32px;
 $headerSizeMD: 38px;
-$headerSizeLD: 50px;
+$headerSizeLD: 42px;
 
 $parafSize: 16px;
 
@@ -40,6 +42,12 @@ $defaultPadding: 80px;
 
 body{
   margin-top: $headerHeight;
+}
+
+@mixin heading{
+  font-family: $headerFont;
+  font-size: $headerSizeXS;
+  font-weight: 800;
 }
 
 // ------- Header -------
@@ -154,9 +162,7 @@ body{
       text-align: center;
     }
     &__title{
-      font-family: $headerFont;
-      font-size: $headerSizeXS;
-      font-weight: 800;
+      @include heading;
     }
     &__text{
       font-size: $parafSize;
@@ -185,9 +191,7 @@ body{
     font-size: $parafSize;
     color: $headCol;
     &__title{
-      font-size: $headerSizeXS;
-      font-family: $headerFont;
-      font-weight: 800;
+      @include heading;
       color: $headCol;
       margin-bottom: $headerMargXS;
     }
@@ -255,6 +259,80 @@ body{
     }
   }
 }
+// ------- Packages -------
+.packages{
+  background-color: $black;
+  color: $white;
+  padding-top: $defaultPadding;
+  padding-bottom: $defaultPadding;
+  &__title{
+    @include heading;
+    margin-bottom: $headerMargXS;
+  }
+  .pack-container{
+    margin-bottom: 30px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    .pack{
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      &__header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        border-width: 1px 1px 0 1px;
+        border-style: solid;
+        border-color: $textCol;
+        border-top-right-radius: 20px;
+        border-top-left-radius: 20px;
+        .icon{
+          max-height: 110px;
+          width: auto;
+          margin-bottom: 30px;
+        }
+        .title{
+          @include heading;
+        }
+      }
+      &__content{
+        background-color: $white;
+        color: $headCol;
+        padding: 30px;
+        border-bottom-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .pack-list{
+          padding-left: 25px;
+          line-height: 30px;
+          margin-bottom: 30px;
+        }
+        .btn{
+          border-radius: 20px;
+          padding: 10px;
+          &__bold,
+          &__fade{
+            display: block;
+          }
+          &__bold{
+            font-family: $headerFont;
+            font-weight: 800;
+          }
+          &__fade{
+            color: transparentize($white, .5)
+          }
+        }
+      }
+    }
+  }
+}
 // ------- Footer -------
 .footer{
   background-color: $footer;
@@ -307,6 +385,12 @@ body{
       }
     }
   }
+  .packages{
+    &__title{
+      font-size: $headerSizeSD;
+      margin-bottom: $headerMargSD
+    }
+  }
 }
 
 // Medium devices (tablets, 768px and up)
@@ -322,7 +406,7 @@ body{
     .main{
       &__title{
         font-size: $headerSizeMD;
-        margin-bottom: $headerMargMD
+        margin-bottom: $headerMargMD;
       }
       .btn{
         &__text{
@@ -331,6 +415,12 @@ body{
           font-weight: bold;
         }
       }
+    }
+  }
+  .packages{
+    &__title{
+      font-size: $headerSizeMD;
+      margin-bottom: $headerMargMD;
     }
   }
 }
@@ -393,6 +483,7 @@ body{
     .hero-content{
       &__title{
         font-size: $headerSizeLD;
+        margin-bottom: 15px;
       }
     }
   }
@@ -407,6 +498,15 @@ body{
           padding: $btnPaddingLD;
         }
       }
+    }
+  }
+  .packages{
+    &__title{
+      font-size: $headerSizeLD;
+      margin-bottom: $headerMargLD;
+    }
+    .pack-container{
+      margin-bottom: 0;
     }
   }
   .footer{
