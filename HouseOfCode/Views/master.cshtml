@@ -26,9 +26,9 @@
 <body>
     <div>
         <!-- Header -->
-        <div class="header">
+        <header class="header">
             @{ Html.RenderPartial("headerMenu"); }
-        </div>
+        </header>
 
         <!-- Hero -->
         <div class="hero @heroType">
@@ -41,9 +41,9 @@
         </div>
 
         <!-- Footer -->
-        <div class="footer">
+        <footer class="footer">
             @{ Html.RenderPartial("Footer"); }
-        </div>
+        </footer>
     </div>
 
     <script src="@Url.Content("~/scripts/main.min.js")"></script>

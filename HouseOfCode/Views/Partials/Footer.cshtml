@@ -2,8 +2,41 @@
 
 @{ 
     var footer = Model.Root().Siblings().FirstOrDefault(x => x.ContentType.Alias == "headerFooter");
+
+    var phone = footer.Value("footerPhone").ToString();
+    var res = "";
+
+    if(!phone.Contains(" ")){
+        var list = Enumerable.Range(0, phone.Length / 2).Select(i => phone.Substring(i * 2, 2));
+        res = string.Join(" ", list);
+    } else {
+        res = phone;
+    }
+
 }
 
-@footer.Value("footerCvr")
-@footer.Value("footerEmail")
-@footer.Value("footerPhone")
+    <div class="container">
+        <div class="row">
+
+            <ul class="col-md-6 col-12 info">
+                <li class="info__list">CVR: @footer.Value("footerCvr")</li>
+                <li class="info__list">@footer.Value("footerEmail")</li>
+                <li class="info__list">+45 @res </li>
+            </ul>
+
+            <div class="col-md-6 col-12 d-none d-md-flex logo">
+                @{
+                    var logo = Model.Root().Siblings().FirstOrDefault(x => x.ContentType.Alias == "headerFooter");
+                    var lSrc = logo.Value<IPublishedContent>("mainLogo");
+
+                    if (lSrc != null) {
+                        @: <img class="logo__target" src="@lSrc.Url" alt="@lSrc.Value("alt")" />
+                    } else {
+                        @: <span class="logo__target">Erol Bakic</span>
+                    }
+                }
+            </div>
+
+        </div>
+    </div>
+
