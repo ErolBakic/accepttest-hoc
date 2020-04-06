@@ -45,9 +45,12 @@
                 </li>
 
                 @foreach (var item in selection){
-                    <li class="menu__list @(item.IsAncestorOrSelf(Model) ? "menu--active" : null)">
-                        <a class="menu__link" href="@item.Url">@item.Name</a>
-                    </li>
+                    if(item.Name != "Opret Bruger")
+                    {
+                        <li class="menu__list @(item.IsAncestorOrSelf(Model) ? "menu--active" : null)">
+                            <a class="menu__link" href="@item.Url">@item.Name</a>
+                        </li>
+                    }
                 }
             </ul>
             }

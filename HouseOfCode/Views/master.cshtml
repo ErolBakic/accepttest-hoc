@@ -17,7 +17,7 @@
     <link rel="stylesheet" type="text/css" href=@Url.Content("~/css/style.min.css")>
 
     @{
-        if (Model.Value("seoBeskrivelse") != string.Empty)
+        if (Model.Value("seoBeskrivelse").ToString() != string.Empty)
         {
             <meta name="description" content="@Model.Value("seoBeskrivelse")">
         }

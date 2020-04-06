@@ -17,7 +17,7 @@
 <!-- Packages her -->
 <!-- Medlemsskab -->
 @{
-    if (Model.Value("ctaOverskrift") != String.Empty && @Model.Value("ctaIndhold") != String.Empty)
+    if (Model.Value("ctaOverskrift").ToString() != String.Empty && @Model.Value("ctaIndhold").ToString() != String.Empty)
     { @:
 
 
@@ -31,7 +31,7 @@
                         <a href="/log-ind" class="btn btn--loogame">
                             <span class="btn__text">
                                 @{
-                                    if (Model.Value("ctaButton") != String.Empty)
+                                    if (Model.Value("ctaButton").ToString() != String.Empty)
                                     {
                                         @Model.Value("ctaButton");
                                     }

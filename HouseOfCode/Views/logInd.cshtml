@@ -1,4 +1,5 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+
 @{
 	Layout = "master.cshtml";
 }
@@ -6,10 +7,11 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2 col-12 main">
-                <form>
-                    <label>Label</label>
-                    <input type="text">
-                </form>
+                @{ Html.RenderPartial("_login"); }
+
+                <p class="text-muted text-center mt-5">Har du ikke en bruger?
+                    <a href="/opret-bruger">Opret en bruger</a>
+                </p>
             </div>
         </div>
     </div>

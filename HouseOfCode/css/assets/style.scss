@@ -23,7 +23,7 @@ $headerSizeSD: 32px;
 $headerSizeMD: 38px;
 $headerSizeLD: 50px;
 
-$parafSize: 18px;
+$parafSize: 16px;
 
 $headerMargXS: 30px;
 $headerMargSD: 45px;
@@ -95,6 +95,10 @@ body{
       transition: .5s ease;
       &--active{
         right: 0%;
+        > .menu__link{
+          pointer-events: none;
+          text-decoration: underline;
+        }
       }
       &__list{
         text-align: center;
@@ -178,6 +182,8 @@ body{
   .main{
     padding-top: $defaultPadding;
     padding-bottom: $defaultPadding;
+    font-size: $parafSize;
+    color: $headCol;
     &__title{
       font-size: $headerSizeXS;
       font-family: $headerFont;
@@ -187,8 +193,6 @@ body{
     }
     &__content{
       line-height: 30px;
-      font-size: $parafSize;
-      color: $headCol;
       > * {
         margin-bottom: 40px;
         &:last-child{
@@ -201,6 +205,8 @@ body{
       text-align: center;
       margin-top: 80px;
       pointer-events: none;
+      background-color: transparent;
+      width: 100%;
       &:focus{
         outline: none;
         box-shadow: none;
@@ -234,6 +240,18 @@ body{
           }
         }
       }
+    }
+    .validation-summary-errors ul{
+      margin-bottom: 0;
+      list-style: none;
+    }
+    .form-group{
+      .form-control{
+        padding: .75rem 1.25rem;
+      }
+    }
+    .invalid-feedback{
+      display: block;
     }
   }
 }
@@ -343,7 +361,7 @@ body{
         }
         &__link{
           border-bottom: 0;
-          font-size: 18px;
+          font-size: $parafSize;
           font-weight: normal;
           padding: 0 0 5px 0;
           &::after{
@@ -369,7 +387,9 @@ body{
     }
   }
   .hero{
-    height: 525px;
+    &:not(&--sub){
+      height: 525px;
+    }
     .hero-content{
       &__title{
         font-size: $headerSizeLD;
