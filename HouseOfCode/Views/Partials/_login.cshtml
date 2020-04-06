@@ -8,7 +8,7 @@
 
 @{
     var loginModel = new LoginModel();
-    loginModel.RedirectUrl = HttpContext.Current.Request.Url.AbsolutePath;
+    loginModel.RedirectUrl = "/";
 
     Html.EnableClientValidation();
     Html.EnableUnobtrusiveJavaScript();

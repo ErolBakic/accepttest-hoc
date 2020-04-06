@@ -4,7 +4,6 @@
 @using Umbraco.Web
 @using Umbraco.Web.Controllers
 
-
 @{
     @*
         You can specify a custom member type alias in the constructor, the default is 'Member'
@@ -13,7 +12,8 @@
         var registerModel = Members.CreateRegistrationModel("Custom Member");
     *@
 
-    var registerModel = Members.CreateRegistrationModel();
+var registerModel = Members.CreateRegistrationModel();
+registerModel.RedirectUrl = "/";
 
     @*
         Configurable here:
@@ -32,17 +32,14 @@
                                           @Html.ValidationMessageFor(m => registerModel.Username)
     *@
 
-    Html.EnableClientValidation();
-    Html.EnableUnobtrusiveJavaScript();
-    Html.RequiresJs("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js");
-    Html.RequiresJs("https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js");
-    Html.RequiresJs("https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js");
+Html.EnableClientValidation();
+Html.EnableUnobtrusiveJavaScript();
+Html.RequiresJs("https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js");
+Html.RequiresJs("https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js");
+Html.RequiresJs("https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js");
 
-    var success = TempData["FormSuccess"] != null;
+var success = TempData["FormSuccess"] != null;
 }
-
-@*NOTE: This RenderJsHere code should be put on your main template page where the rest of your script tags are placed*@
-@Html.RenderJsHere()
 
 @if (success)
 {
