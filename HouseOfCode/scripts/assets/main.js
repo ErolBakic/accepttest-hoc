@@ -24,4 +24,10 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   toggleBtn.addEventListener('click', toggleNav);
 
+  // Form autofocus
+  const form = document.querySelector('form');
+  if(form){
+    form.querySelector('.form-control').focus();
+  }
+
 });

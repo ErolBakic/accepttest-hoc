@@ -27,7 +27,7 @@
             <div class="col-md-6 col-12 d-none d-md-flex logo">
                 @{
                     var logo = Model.Root().Siblings().FirstOrDefault(x => x.ContentType.Alias == "headerFooter");
-                    var lSrc = logo.Value<IPublishedContent>("mainLogo");
+                    var lSrc = logo.Value<IPublishedContent>("footerLogo");
 
                     if (lSrc != null) {
                         @: <img class="logo__target" src="@lSrc.Url" alt="@lSrc.Value("alt")" />

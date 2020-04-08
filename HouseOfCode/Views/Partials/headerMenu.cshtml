@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
         <div class="col-3 col-lg-2 header__logo">
-            <a class="logo" href="/">
+            <a title="Tilbage til forsiden" class="logo" href="/">
                 @{
                     // Get logo
                     var logo = Model.Root().Siblings().FirstOrDefault(x => x.ContentType.Alias == "headerFooter");
@@ -23,7 +23,7 @@
 
         <div class="col-9 offset-lg-4 col-lg-6 header__menu">
 
-            <a id="toggle-nav">
+            <a id="toggle-nav" title="Åben menu">
                 <svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" >
                     <path fill="currentColor" d="M442 114H6a6 6 0 0 1-6-6V84a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6zm0 160H6a6 6 0 0 1-6-6v-24a6 6 0 0 1 6-6h436a6 6 0 0 1 6 6v24a6 6 0 0 1-6 6z" class=""></path>
                 </svg>
@@ -33,22 +33,22 @@
             <ul id="top-menu" class="menu">
 
                 <li class="menu__list">
-                    <a class="menu__link" href="#">Menu 1</a>
+                    <a tite="Menu 1" class="menu__link" href="#">Menu 1</a>
                 </li>
 
                 <li class="menu__list">
-                    <a class="menu__link" href="#">Menu 2</a>
+                    <a tite="Menu 2" class="menu__link" href="#">Menu 2</a>
                 </li>
 
                 <li class="menu__list">
-                    <a class="menu__link" href="#">Menu 3</a>
+                    <a tite="Menu 3" class="menu__link" href="#">Menu 3</a>
                 </li>
 
                 @foreach (var item in selection){
                     if(item.Name != "Opret Bruger")
                     {
                         <li class="menu__list @(item.IsAncestorOrSelf(Model) ? "menu--active" : null)">
-                            <a class="menu__link" href="@item.Url">@item.Name</a>
+                            <a title="@item.Name" class="menu__link" href="@item.Url">@item.Name</a>
                         </li>
                     }
                 }

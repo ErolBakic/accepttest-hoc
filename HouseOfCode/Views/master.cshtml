@@ -5,6 +5,11 @@
     Layout = null;
 
     var heroType = Model.Name == "Forside" ? "hero--main" : "hero--sub";
+
+    // fav icon
+    var setting = Model.Root().Siblings().FirstOrDefault(x => x.ContentType.Alias == "headerFooter");
+    var ico = setting.Value<IPublishedContent>("favIkon");
+
 }
 
 <!DOCTYPE html>
@@ -13,6 +18,7 @@
     <title>@Model.Value("seoOverskrift")</title>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="@ico.Url">
 
     <link rel="stylesheet" type="text/css" href=@Url.Content("~/css/style.min.css")>
 

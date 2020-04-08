@@ -69,8 +69,11 @@ body{
       &__target{
         display: block;
           width: 100%;
-          max-width: 55px;
           height: auto;
+          font-weight: bold;
+          color: $headCol;
+          max-height: 55px;
+          width: auto;
       }
     }
   }
@@ -86,6 +89,10 @@ body{
       cursor: pointer;
       svg{
         pointer-events: none;
+      }
+      &:focus{
+        outline-width: 2px;
+        outline-color: blue;
       }
     }
     .menu{
@@ -204,47 +211,6 @@ body{
         }
       }
     }
-    .btn{
-      display: block;
-      text-align: center;
-      margin-top: 80px;
-      pointer-events: none;
-      background-color: transparent;
-      width: 100%;
-      &:focus{
-        outline: none;
-        box-shadow: none;
-      }
-      &__text{
-        color: $white;
-        background-color: $textCol;
-        padding: $btnPaddingXS;
-        border-radius: 26px;
-        font-size: $parafSize;
-        font-weight: normal;
-        pointer-events: initial;
-        &:hover{
-          text-decoration: none;
-          background-color: lighten($textCol, 10);
-        }
-      }
-      &--loogame{
-        .btn__text{
-          background-color: $loogame;
-          &:hover{
-            background-color: lighten($loogame, 10);
-          }
-        }
-      }
-      &--success{
-        .btn__text{
-          background-color: $success;
-          &:hover{
-            background-color: lighten($success, 10);
-          }
-        }
-      }
-    }
     .validation-summary-errors ul{
       margin-bottom: 0;
       list-style: none;
@@ -256,6 +222,15 @@ body{
     }
     .invalid-feedback{
       display: block;
+    }
+  }
+  .btn{
+    padding: $btnPaddingXS;
+    font-weight: bold;
+    border-radius: 30px;
+    &__fade{
+      color: transparentize($white, .5);
+      font-weight: normal;
     }
   }
 }
@@ -312,22 +287,7 @@ body{
         .pack-list{
           padding-left: 25px;
           line-height: 30px;
-          margin-bottom: 30px;
-        }
-        .btn{
-          border-radius: 20px;
-          padding: 10px;
-          &__bold,
-          &__fade{
-            display: block;
-          }
-          &__bold{
-            font-family: $headerFont;
-            font-weight: 800;
-          }
-          &__fade{
-            color: transparentize($white, .5)
-          }
+          margin-bottom: 50px;
         }
       }
     }
@@ -378,11 +338,6 @@ body{
         font-size: $headerSizeSD;
         margin-bottom: $headerMargSD
       }
-      .btn{
-        &__text{
-          padding: $btnPaddingSD;
-        }
-      }
     }
   }
   .packages{
@@ -407,13 +362,6 @@ body{
       &__title{
         font-size: $headerSizeMD;
         margin-bottom: $headerMargMD;
-      }
-      .btn{
-        &__text{
-          padding: $btnPaddingMD;
-          font-size: 20px;
-          font-weight: bold;
-        }
       }
     }
   }
@@ -492,11 +440,6 @@ body{
       &__title{
         font-size: $headerSizeLD;
         margin-bottom: $headerMargLD
-      }
-      .btn{
-        &__text{
-          padding: $btnPaddingLD;
-        }
       }
     }
   }

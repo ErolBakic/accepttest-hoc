@@ -51,8 +51,8 @@
                                     }
                                 }
 
-                                <a href="#" class="btn btn-success">
-                                    <span class="btn__bold">@price DKK / måned </span>
+                                <a title="Bestil @title pakken" href="#" class="btn btn-success">
+                                    <span class="btn__bold d-block">@price DKK / måned </span>
                                     <span class="btn__fade">Ekskl. moms</span>
                                 </a>
                             </div>
@@ -83,8 +83,8 @@
                     <div class="main__content">
                         @Model.Value("ctaIndhold")
 
-                        <a href="/log-ind" class="btn btn--loogame">
-                            <span class="btn__text">
+                        <div class="col-12 text-center mt-5">
+                            <a title="Gå til log ind siden" href="/log-ind" class="btn btn-secondary text-center">
                                 @{
                                     if (Model.Value("ctaButton").ToString() != String.Empty)
                                     {
@@ -95,8 +95,9 @@
                                         @: Klik mig
                                     }
                                 }
-                            </span>
-                        </a>
+                            </a>
+                        </div>
+                            
                     </div>
                 </main>
             </div>

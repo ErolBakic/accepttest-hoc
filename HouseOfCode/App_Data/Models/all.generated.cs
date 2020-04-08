@@ -6,8 +6,8 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "7748d24cc4c5b848")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.6")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "85294d028b5aca53")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
 
 
 // FILE: models.generated.cs
@@ -424,6 +424,13 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// Fav Ikon
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("favIKon")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent FavIkon => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("favIKon");
+
+		///<summary>
 		/// CVR
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
@@ -436,6 +443,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("footerEmail")]
 		public string FooterEmail => this.Value<string>("footerEmail");
+
+		///<summary>
+		/// Logo
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
+		[ImplementPropertyType("footerLogo")]
+		public global::Umbraco.Core.Models.PublishedContent.IPublishedContent FooterLogo => this.Value<global::Umbraco.Core.Models.PublishedContent.IPublishedContent>("footerLogo");
 
 		///<summary>
 		/// Telefon Nummer

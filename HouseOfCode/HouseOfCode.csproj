@@ -321,6 +321,8 @@
     <Content Include="Views\opretBruger.cshtml" />
     <Content Include="Views\Partials\headerMenu.cshtml" />
     <Content Include="Views\Partials\Footer.cshtml" />
+    <Content Include="Views\Partials\_login.cshtml" />
+    <Content Include="Views\Partials\_register.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
