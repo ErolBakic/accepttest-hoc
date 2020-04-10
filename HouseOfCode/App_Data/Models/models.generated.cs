@@ -17,8 +17,8 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Web;
 using Umbraco.ModelsBuilder.Embedded;
 
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "85294d028b5aca53")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "904ee55bbb6ad344")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.2")]
 
 namespace Umbraco.Web.PublishedModels
 {
@@ -111,14 +111,14 @@ namespace Umbraco.Web.PublishedModels
 		public string Underskrift => global::Umbraco.Web.PublishedModels.BasicContent.GetUnderskrift(this);
 
 		///<summary>
-		/// Side Beskrivelse
+		/// Meta Beskrivelse
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("seoBeskrivelse")]
 		public string SeoBeskrivelse => global::Umbraco.Web.PublishedModels.SEO.GetSeoBeskrivelse(this);
 
 		///<summary>
-		/// Overskrift
+		/// Side Titel
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("seoOverskrift")]
@@ -172,14 +172,14 @@ namespace Umbraco.Web.PublishedModels
 		public string Underskrift => global::Umbraco.Web.PublishedModels.BasicContent.GetUnderskrift(this);
 
 		///<summary>
-		/// Side Beskrivelse
+		/// Meta Beskrivelse
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("seoBeskrivelse")]
 		public string SeoBeskrivelse => global::Umbraco.Web.PublishedModels.SEO.GetSeoBeskrivelse(this);
 
 		///<summary>
-		/// Overskrift
+		/// Side Titel
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("seoOverskrift")]
@@ -190,11 +190,11 @@ namespace Umbraco.Web.PublishedModels
 	/// <summary>SEO</summary>
 	public partial interface ISEO : IPublishedContent
 	{
-		/// <summary>Side Beskrivelse</summary>
+		/// <summary>Meta Beskrivelse</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		string SeoBeskrivelse { get; }
 
-		/// <summary>Overskrift</summary>
+		/// <summary>Side Titel</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		string SeoOverskrift { get; }
 	}
@@ -225,24 +225,24 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// Side Beskrivelse
+		/// Meta Beskrivelse
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("seoBeskrivelse")]
 		public string SeoBeskrivelse => GetSeoBeskrivelse(this);
 
-		/// <summary>Static getter for Side Beskrivelse</summary>
+		/// <summary>Static getter for Meta Beskrivelse</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		public static string GetSeoBeskrivelse(ISEO that) => that.Value<string>("seoBeskrivelse");
 
 		///<summary>
-		/// Overskrift
+		/// Side Titel
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("seoOverskrift")]
 		public string SeoOverskrift => GetSeoOverskrift(this);
 
-		/// <summary>Static getter for Overskrift</summary>
+		/// <summary>Static getter for Side Titel</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		public static string GetSeoOverskrift(ISEO that) => that.Value<string>("seoOverskrift");
 	}
@@ -294,14 +294,14 @@ namespace Umbraco.Web.PublishedModels
 		public string Underskrift => global::Umbraco.Web.PublishedModels.BasicContent.GetUnderskrift(this);
 
 		///<summary>
-		/// Side Beskrivelse
+		/// Meta Beskrivelse
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("seoBeskrivelse")]
 		public string SeoBeskrivelse => global::Umbraco.Web.PublishedModels.SEO.GetSeoBeskrivelse(this);
 
 		///<summary>
-		/// Overskrift
+		/// Side Titel
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("seoOverskrift")]
@@ -499,14 +499,14 @@ namespace Umbraco.Web.PublishedModels
 		public string Underskrift => global::Umbraco.Web.PublishedModels.BasicContent.GetUnderskrift(this);
 
 		///<summary>
-		/// Side Beskrivelse
+		/// Meta Beskrivelse
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("seoBeskrivelse")]
 		public string SeoBeskrivelse => global::Umbraco.Web.PublishedModels.SEO.GetSeoBeskrivelse(this);
 
 		///<summary>
-		/// Overskrift
+		/// Side Titel
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.0")]
 		[ImplementPropertyType("seoOverskrift")]
