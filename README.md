@@ -1,16 +1,18 @@
 ## House of Code optagelsesprøve
 
-Dette web applikation indeholder en **responsiv (Mobile first)** Umbraco hjemmeside, med egen implementeret design. 
-Landing page består en intro tekst, pakker og "call to action", som kan redigeres igennem Umbraco CMS'et.
-Login- og registreringssiden validerer brugererens input. Hvis der er fejl, dukker en fejlmeddelelse op, ellers redirecter den brugereren til forsiden.
-Alle sider deler en **SEO** og **Hero** component. Forsiden benytter en element til pakkeløsninger, så man ikke gentager sig med fields.
+Dette web applikation er en **responsiv (Mobile first)** Umbraco hjemmeside, med egen implementeret design. 
+Landing page består af en intro tekst, pakker og "call to action", som kan redigeres igennem Umbraco CMS'et.
 
-Det er muligt at benytte hjemmesiden uden brug af mus, dvs. via brug af tab (Accessibility).
+Login- og registreringssiden validerer brugererens input. Hvis der er fejl, dukker en fejlmeddelelse op, ellers redirecter den brugeren til forsiden.
+
+Alle sider deler en **SEO** og **Hero** component. Forsiden benytter en element til pakkeløsninger, som bliver brugt som nested content, så man ikke gentager sig med fields.
+
+Det er muligt at benytte hjemmesiden uden brug af mus, dvs. via brug af keyboard tab (Accessibility).
 
 For styling af siden, blev der benyttet af SASS, hvor den derefter sammen med javaScript blev minificeret af gulp.js.
 
-### Bruger oplysninger
-PS! Brugernavn og kode er case sensitive.
+### Brugeroplysninger
+PS! Brugernavn og kodeord er case sensitive.
 | Typer        | Username / e-mail           | Kodeord  |
 | ------------- |-------------| -----|
 | Database      | HouseOfCode | Password1 |
